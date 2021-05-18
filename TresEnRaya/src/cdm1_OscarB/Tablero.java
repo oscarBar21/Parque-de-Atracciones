@@ -46,10 +46,10 @@ public class Tablero {
 	
 	public String comprobarPartida() {
 		int cont = 0;
-		String resul = "N";
+		String resultado = "No Empate ";
 		
 		
-		//Comprobar tablero lleno
+		//Tablero lleno
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++){
 				if (tablero[i][j].equals("| X |") || tablero[i][j].equals("| O |")) {
@@ -58,10 +58,10 @@ public class Tablero {
 			}
 		}
 		if (cont == 9) {
-			 resul = "T";
+			 resultado = "Empate";
 		}
 		
-		//Comprobar filas
+		//Filas
 		for (int i = 0; i < filas; i++) {
 			int contX = 0, contO = 0;
 			for (int j = 0; j < columnas; j++){
@@ -73,12 +73,12 @@ public class Tablero {
 				}
 			}
 			if (contO == 3 || contX == 3) {
-				 resul = tablero[i][0].substring(2, 3);
+				 resultado = tablero[i][0].substring(2, 3);
 			}
 		}
 		
 		
-		//Comprobar Columnas
+		//Columnas
 		for (int i = 0; i < filas; i++) {
 			int contX = 0, contO = 0;
 			for (int j = 0; j < columnas; j++){
@@ -90,18 +90,18 @@ public class Tablero {
 				}
 			}
 			if (contO == 3 || contX == 3) {
-				 resul = tablero[i][0].substring(2, 3);
+				 resultado = tablero[i][0].substring(2, 3);
 			}
 		}
 		
 		
-		//Comprobar diagonales
+		//Diagonales
 		String prueba = "";
 		for (int i = 0; i < filas; i++) {
 			prueba += tablero[i][i].substring(2, 3);
 		}
 		if (prueba.equals("XXX") || prueba.equals("OOO")) {
-			resul = prueba.substring(0, 1);
+			resultado = prueba.substring(0, 1);
 		}
 		prueba = "";
 		int restar = filas;
@@ -110,11 +110,11 @@ public class Tablero {
 			prueba += tablero[i][restar].substring(2, 3);
 		}
 		if (prueba.equals("XXX") || prueba.equals("OOO")) {
-			resul = prueba.substring(0, 1);
+			resultado = prueba.substring(0, 1);
 		}
 		
 		
-		return resul;
+		return resultado;
 	}
 	
 }
