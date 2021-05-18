@@ -123,7 +123,7 @@ public static void main(String[] args){
 				break;
 			}
 			case "T" : {
-				System.out.println("La partida a acabado se ha quedado en tablas");
+				System.out.println("El Resultado de la partida es Empate");
 				break;
 			}
 		}
